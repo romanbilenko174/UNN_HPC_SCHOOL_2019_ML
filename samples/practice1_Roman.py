@@ -8,7 +8,7 @@ from imagefilter import ImageFilter
 
 def build_argparse():
     parser = argparse.ArgumentParser()
-    parser.add_argument("-path", type= str,help = "Path to image")
+    parser.add_argument("-path", type= str,help = "Path to image", required= True)
     parser.add_argument("-gray", type=bool, help="Grayscale img" , default=False, required= False)
     parser.add_argument("-shape", type=bool, help="Reshape img",default = False, required= False)
     parser.add_argument("-crop", type=bool, help="Crop img", default = False, required= False)
@@ -18,7 +18,7 @@ def build_argparse():
     parser.add_argument("-X2", type=int, help="X2 coordinate of image", default=300, required=False)
     parser.add_argument("-Y1", type=int, help="Y1 coordinate of image", default=100, required=False)
     parser.add_argument("-Y2", type=int, help="Y2 coordinate of image", default=300, required=False)
-    parser.add_argument("-alpha", type=int, help="alpha indent", default=100, required=False)
+    parser.add_argument("-alpha", type=int, help="alpha indent", default=0, required=False)
     return parser
 
 def main():
